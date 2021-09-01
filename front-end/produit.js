@@ -1,6 +1,5 @@
 const params = new URL(document.location).searchParams;
 const id = params.get("id");
-console.log(id);
 
 const produitImg = document.querySelector(".produit-img");
 const produitName = document.querySelector(".produit-titre");
@@ -25,7 +24,6 @@ fetch(`http://localhost:3000/api/teddies/${id}`)
     })
     .then(function (resApi) {
         article = resApi;
-        console.log(article);
         produitName.innerHTML = article.name;
         produitImg.src = article.imageUrl;
         produitDescription.innerText = article.description;
@@ -50,21 +48,33 @@ fetch(`http://localhost:3000/api/teddies/${id}`)
             }
         }
 
-        //local storage
-        let produitlocalstorage = JSON.parse(localStorage.getItem("article"));
-        console.log(produitlocalstorage)
-
-        if (produitlocalstorage) {
-            produitlocalstorage.push(article);
-            localStorage.setItem("produit", JSON.stringify(produitlocalstorage));
-            popupConfirmation()
-            console.log(produitlocalstorage);
-        }
-        else {
-            produitlocalstorage = [];
-            produitlocalstorage.push(article);
-            localStorage.setItem("produit", JSON.stringify(produitlocalstorage));
-            console.log(produitlocalstorage);
-        }
-
     });
+
+const btn = document.querySelector(".produit-btn");
+btn.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    //fonction fenetre pop up
+    const popupConfirmation = () => {
+        if (window.confirm(`${article.name} produit : ${article.description} à bien été ajouté au panier
+        Consultez le panier OK ou revenir à l'accueil ANNULER`)) {
+            window.location.href = "panier.html";
+        } else {
+            window.location.href = "index.html";
+        }
+    }
+
+    //local storage
+    let produitlocalstorage = JSON.parse(localStorage.getItem("produit"));
+    if (!produitlocalstorage) {
+        produitlocalstorage = [];
+        popupConfirmation();
+    }
+    if (!produitlocalstorage.includes(article._id)) {
+        produitlocalstorage.push(article._id);
+        popupConfirmation();
+    }
+
+    localStorage.setItem("produit", JSON.stringify(produitlocalstorage));
+
+});
