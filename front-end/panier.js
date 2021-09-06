@@ -14,19 +14,22 @@ if (produitlocalstorage === null) {
     </div>`;
     positionelement.innerHTML = paniervide;
 } else {
-    let structureproduitpanier = [];
     for (k = 0; k < produitlocalstorage.length; k++) {
-
-        structureproduitpanier = structureproduitpanier + `
+        fetch(`http://localhost:3000/api/teddies/${produitlocalstorage[k]}`)
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                let structureproduitpanier = `
         <div class="container-recapitulatif">
-                        <div class="espace">${produitlocalstorage[k].produitName}</div>
-                        <div>${produitlocalstorage[k].produitPrice} € - supprimer article</div>
+                        <div class="espace">${data.name}</div>
+                        <div>${data.price / 100} € - supprimer article</div>
                     </div>`;
+                positionelement.innerHTML += structureproduitpanier;
+            })
+            .catch((error) => {
+                console.log(error)
+            })
     }
+};
 
-    if (k === produitlocalstorage.length) {
-
-
-        positionelement.innerHTML = structureproduitpanier;
-    }
-}
