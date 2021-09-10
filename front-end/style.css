@@ -211,6 +211,7 @@ a {
 }
 
 footer {
+  margin-top: 800px;
   background: black;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -242,64 +243,125 @@ footer .nav__link {
   font-size: 24px;
 }
 
-#container-produit-panier {
-  width: 680px;
+.container {
+  border: solid 2px black;
+  background-color: #EFE6D1;
+}
+
+.container .panier {
+  padding-bottom: 20px;
+  border-bottom: dashed 2px;
+  margin-bottom: 20px;
+}
+
+.container .panier h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  border: 2px solid black;
+  font-size: 25px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 50px;
+  margin-top: 20px;
 }
 
-#container-produit-panier div {
-  background-color: #f2e8f0;
+.container .panier-vide {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-weight: bold;
-  font-size: 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 20px;
 }
 
-.espace {
-  margin-right: 300px;
-}
-
-.produit-sec {
-  margin-left: 6%;
-}
-
-.grid-panier {
+.container .panier .panier-produit {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto;
-      grid-template-columns: auto;
-  -ms-grid-rows: auto;
-      grid-template-rows: auto;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  margin-bottom: 20px;
 }
 
-.container-recapitulatif {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  background-color: #f2e8f0;
+.container .panier .panier-produit-nom {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  margin-bottom: 20px;
   font-size: 20px;
 }
 
-.container-montant-total {
+.container .panier .panier-produit-prix {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.container .panier .recap-panier {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  margin-bottom: 10px;
+}
+
+.container .panier .recap-panier-montant {
+  justify-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container .panier .recap-panier-montant-text {
+  margin-right: 5px;
+}
+
+.container .panier .recap-panier-btn {
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.container .btn-commande {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.container .btn-commande .commande {
+  font-size: 17px;
+}
+
+.formulaire-title {
+  margin-bottom: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   font-size: 20px;
-  background-color: #f2e8f0;
+}
+
+.container-confirmation-details {
+  display: -ms-grid;
+  display: grid;
+  grid-row-gap: 20px;
+}
+
+.container-confirmation-details-prix {
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.container-confirmation-details-id {
+  -ms-grid-column-align: center;
+      justify-self: center;
 }
 
 @media screen and (max-width: 530px) {

@@ -19,19 +19,72 @@
             <a href="panier.html"><i class="fas fa-shopping-cart caddy"></i></a>
         </div>
     </header>
-
-    <div class="container">
-        <div class="grid-panier">
-            <main>
-                <div id="container-produit-panier">
-                    <h2 class="produit-sec">Les produits sélectionnées</h2>
+    <main>
+        <!-- LES PRODUITS -->
+        <div class="container">
+            <div class="panier">
+                <h2>Vos produits sélectionnées</h2>
+                <div class="panier-produit">
 
                 </div>
+                <div class="recap-panier">
+                    <div class="recap-panier-montant">
+                        <div class="recap-panier-montant-text">Montant total:</div>
+                        <div class="recap-panier-montant-prix"></div>
+                    </div>
+                    <button class="recap-panier-btn">Vider le panier</button>
+                </div>
+            </div>
+            <!-- Formulaire -->
+            <div class="formulaire">
+                <h2 class="formulaire-title">Votre adresse de livraison</h2>
+                <form class="form">
+                    <div class="nom-prenom">
 
-            </main>
+                        <div class="bloc-nom">
+                            <label for="lastname">Nom :</label>
+                            <input type="text" placeholder="Nom" id="lastname" name="user_lastname" required>
+                        </div>
+                        <div class="bloc-prenom">
+                            <label for="name">Prénom :</label>
+                            <input type="text" placeholder="Prénom" id="name" name="user_name" required>
+                        </div>
+                    </div>
+                    <div class="ville-postal">
+
+                        <div class="bloc-postal">
+                            <label for="postal">Code postal :</label>
+                            <input type="text" placeholder="Code postal" id="postal" name="user_postal" required>
+                        </div>
+                        <div class="bloc-ville">
+                            <label for="city">Ville :</label>
+                            <input type="text" placeholder="Ville" id="city" name="user_city" required>
+                        </div>
+                    </div>
+                    <div class="bloc-adresse">
+
+                        <label for="adress">Adresse :</label>
+                        <input type="text" placeholder="Adresse de livraison" id="adress" name="user_adress" required>
+                    </div>
+                    <div class="bloc-mail">
+
+                        <label for="mail">Adresse mail :</label>
+                        <input type="email" placeholder="Adresse mail" id="mail" name="user_mail" required>
+                    </div>
+                    <div class="bloc-num">
+
+                        <label for="phone">Numéro de téléphone :</label>
+                        <input type="tel" placeholder="Numéro de téléphone" id="phone" name="phone" required>
+                    </div>
+                    <div class="erreur"></div>
+
+                    <div class="btn-commande"><button class="commande">Commander</button></div>
+                </form>
+            </div>
 
         </div>
-    </div>
+    </main>
+
     <footer>
         <div class="nav">
             <a href="" class="nav__link">Contact</a>

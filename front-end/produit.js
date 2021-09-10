@@ -53,7 +53,13 @@ fetch(`http://localhost:3000/api/teddies/${id}`)
 const btn = document.querySelector(".produit-btn");
 btn.addEventListener("click", (event) => {
     event.preventDefault();
-
+    let optionProduit = {
+        name: produitName.innerHTML,
+        prix: produitPrice.innerHTML,
+        _id: id,
+    }
+    //Declaration de la variable dans laquelle on met les key qui sont dans le localStorage
+    let produitlocalstorage = JSON.parse(localStorage.getItem("produit"));
     //fonction fenetre pop up
     const popupConfirmation = () => {
         if (window.confirm(`${article.name} produit : ${article.description} à bien été ajouté au panier
@@ -64,17 +70,33 @@ btn.addEventListener("click", (event) => {
         }
     }
 
-    //local storage
-    let produitlocalstorage = JSON.parse(localStorage.getItem("produit"));
-    if (!produitlocalstorage) {
-        produitlocalstorage = [];
-        popupConfirmation();
-    }
-    if (!produitlocalstorage.includes(article._id)) {
-        produitlocalstorage.push(article._id);
-        popupConfirmation();
+    //--------------------------------------Fonction pour ajouter un objet dans le localStorage-------------------
+
+    function ajoutLocalStorage() {
+        //ajout dans le tableau de l'objet 
+        produitlocalstorage.push(optionProduit);
+
+        //transformation en format JSON et envoi dans la Key "produit" du LocalStorage
+        localStorage.setItem('produit', JSON.stringify(produitlocalstorage))
+
     }
 
-    localStorage.setItem("produit", JSON.stringify(produitlocalstorage));
+
+
+    //---------------------------------------LOCAL STORAGE --------------------------------
+
+    //S'il y a deja des objet dans le localStorage
+    if (produitlocalstorage) {
+        ajoutLocalStorage();
+        popupConfirmation();
+    }
+    //S'il y a pas d'objet dans le localStorage
+    else {
+        produitlocalstorage = [];
+        ajoutLocalStorage();
+        popupConfirmation();
+
+
+    }
 
 });
