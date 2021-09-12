@@ -39,15 +39,6 @@ fetch(`http://localhost:3000/api/teddies/${id}`)
 
         }
 
-        const popupConfirmation = () => {
-            if (window.confirm(`${produitName.innerHTML = article.name} option : ${article.description} a bien été ajouté au panier consultez le 
-            panier OK ou revenir à l'accueil ANNULER`)) {
-                window.location.href = "panier.html";
-            } else {
-                window.location.href = "index.html";
-            }
-        }
-
     });
 
 const btn = document.querySelector(".produit-btn");
