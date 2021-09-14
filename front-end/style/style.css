@@ -408,4 +408,53 @@ footer .nav__link {
     width: 260px;
   }
 }
+
+@media screen and (min-width: 766px) and (max-width: 767px) {
+  h2 {
+    color: black;
+    text-align: center;
+  }
+  footer .nav {
+    width: 90%;
+  }
+  footer .nav__link {
+    font-size: 20px;
+  }
+  .description {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 180px;
+    height: 200px;
+  }
+  .caddy {
+    margin-left: 150px;
+  }
+  main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .produit {
+    width: 250px;
+    margin-left: 0;
+  }
+  .produit-img {
+    width: 250px;
+  }
+  .formulaire {
+    width: 260px;
+    margin-right: 50px;
+  }
+  .container {
+    margin-left: 35px;
+    width: 260px;
+  }
+}
 /*# sourceMappingURL=style.css.map */

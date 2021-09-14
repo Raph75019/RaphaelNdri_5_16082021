@@ -279,19 +279,51 @@ footer .nav__link {
         justify-self: center;
     }
 }
-
-
-
-
-
-
-
-
-
-
+//-------------------------Media queries---------------------//
 
 @media screen and (max-width: 530px) {
   h2 {
+    color: black;
+    text-align: center;
+  }
+  footer .nav {
+    width: 90%;
+  }
+  footer .nav__link {
+    font-size: 20px;
+  }
+  .description {
+      flex-direction: column;
+      width: 180px;
+      height: 200px;
+  }
+  .caddy{
+      margin-left: 150px;
+  }
+main{
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: center;
+  }
+  .produit{
+      width: 250px;
+      margin-left: 0;
+  }
+  .produit-img{
+      width: 250px;
+  }
+
+  .formulaire{
+      width: 260px;
+      margin-right: 50px;
+  }
+  .container{
+      margin-left: 35px;
+      width: 260px;
+  }
+}
+@media screen and (min-width: 766px) and (max-width : 767px){
+     h2 {
     color: black;
     text-align: center;
   }
