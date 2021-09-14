@@ -12,3 +12,13 @@ Vous pouvez ensuite exécuter le serveur avec la commande « node server » touj
 Le serveur doit fonctionner sur l’hôte local avec le port par défaut « 3000 ».
 Si le serveur fonctionne sur un autre port pour une raison quelconque,
 celui-ci est imprimé sur la console au démarrage du serveur, p. ex., « Listening on port 3001 ».
+
+Les compétences evaluées sont : 
+
+ • Créer un plan de test pour une application
+
+ • Interagir avec un web service avec JavaScript
+
+ • Valider des données issues de sources externes
+
+ • Gérer des événements JavaScript
