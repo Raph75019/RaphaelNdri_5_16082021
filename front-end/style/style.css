@@ -12,10 +12,8 @@ header {
   height: 100px;
 }
 
-.titre__magasin {
-  margin-top: 25px;
-  padding: 0;
-  margin-left: 10px;
+.logo {
+  width: 250px;
 }
 
 .titre {
@@ -26,7 +24,7 @@ header {
 }
 
 .caddy {
-  margin-left: 1100px;
+  margin-left: 1050px;
   margin-top: 30px;
   font-size: 28px;
 }

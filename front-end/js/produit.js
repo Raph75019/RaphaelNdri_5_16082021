@@ -57,7 +57,7 @@ btn.addEventListener("click", (event) => {
         Consultez le panier OK ou revenir à l'accueil ANNULER`)) {
             window.location.href = "panier.html";
         } else {
-            window.location.href = "index.html";
+            window.location.href = "/front-end/index.html";
         }
     }
 

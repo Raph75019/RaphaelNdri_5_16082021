@@ -19,7 +19,7 @@ function displayallproduct(articles) {
         const product = document.createElement("article");
         product.classList.add("description");
 
-        const linkUrl = `produit.html?id=${article._id}`;
+        const linkUrl = `/front-end/html/produit.html?id=${article._id}`;
 
         const lien = document.createElement("a");
         lien.setAttribute("href", linkUrl);

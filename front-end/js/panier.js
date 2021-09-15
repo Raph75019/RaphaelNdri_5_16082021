@@ -1,5 +1,5 @@
 let produitlocalstorage = JSON.parse(localStorage.getItem("produit"));
-console.log(produitlocalstorage);
+
 
 
 //affichage des produits du panier
@@ -13,7 +13,7 @@ if (produitlocalstorage == null) {
 }
 else {//si le panier n'est pas vide il faut afficher les produits
     produitlocalstorage.forEach(function (produit) {
-        console.log(produit);
+
 
         const nom = document.createElement("div");
         nom.classList.add("panier-produit-nom");
@@ -66,7 +66,6 @@ prixTotal = prixTotal.map((x) => parseFloat(x));
 const reducer = (accumulator, currentValue) => accumulator + currentValue;
 
 const prixToto = prixTotal.reduce(reducer);
-console.log(prixToto);
 
 //Faire apparaitre les prix total sur la page 
 
